@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+  <title>heart_pred</title>
+
+</head>
+<style>
+  body {
+    background-image: url("static/p.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .form-container {
+    display: flex;
+    margin-top: 90px;
+    padding: 10px;
+  }
+
+  .form-box {
+    background-color: rgba(245, 245, 245, 0.61);
+    box-shadow: 5px 10px 18px #888888;
+    padding: 20px;
+  }
+
+  .header {
+    background-color: #17a2b8;
+    padding: 10px;
+    font-size: xx-large;
+  }
+</style>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-info fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="/">Disease Prediction App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+          aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/">Home</a>
+            <a class="nav-item nav-link" href="/about">About</a>
+            <a class="nav-item nav-link" href="/cancer">Breast Cancer</a>
+            <a class="nav-item nav-link" href="/diabetes">Diabetes</a>
+            <a class="nav-item nav-link" href="/heart">Heart</a>
+            <a class="nav-item nav-link" href="/liver">Liver</a>
+            <a class="nav-item nav-link" href="/kidney">Kidney</a>
+
+
+
+          </div>
+          <!-- Navbar Right Side
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register</a>
+        </div>-->
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container" ,class="form-group">
+    <div class="form-box col-md-6">
+
+      <h3 class="header text-center mt-4 mb-4">Enter your medical details :</h3>
+      <form action="/result" method="POST">
+
+
+        <div class="form-group mb-4">
+          <label for="age">Age : </label>
+          <div class="controls">
+            <input type="text" id="age" name="age"  class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <label for="sex">Sex(1:Male,0:Female) : </label>
+          <div class="controls">
+            <input type="text" id="sex" name="sex" class="form-control">
+          </div>
+        </div>
+
+
+
+        <div class="form-group mb-4">
+          <label for="chest pain type">Chest pain type : </label>
+          <div class="controls">
+            <input type="text" id="chest pain type" name="chest pain type" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <label for="trestbps">Trestbps : </label>          <div class="controls">
+            <input type="text" id="trestbps" name="trestbps" class="form-control">
+          </div>
+        </div>
+
+        
+        <div class="form-group mb-4">
+          <label for="serum cholestoral in mg/dl">Serum cholestoral in mg/dl : </label>
+          <div class="controls">
+            <input type="text" id="serum cholestoral in mg/dl" name="serum cholestoral in mg/dl" class="form-control">
+          </div>
+        </div>
+
+
+        <div class="form-group mb-4">
+          <label for="restecg">Restecg : </label>
+          <div class="controls">
+            <input type="text" id="restecg" name="restecg" class="form-control">
+          </div>
+        </div>
+
+
+
+        <div class="form-group mb-4">
+          <label for="thalach">Thalach : </label>
+          <div class="controls">
+            <input type="text" id="thalach" name="thalach" class="form-control">
+          </div>
+        </div>
+
+
+
+        <div class="form-group mb-4">
+          <label for="exang">Exang : </label>
+          <div class="controls">
+            <input type="text" id="exang" name="exang" class="form-control">
+          </div>
+        </div>
+
+
+        <div class="form-group mb-4">
+          <label for="oldpeak">Oldpeak : </label>
+          <div class="controls">
+            <input type="text" id="oldpeak" name="oldpeak" class="form-control">
+          </div>
+        </div>
+
+
+
+        <div class="form-group mb-4">
+          <label for="slope">Slope : </label>
+          <div class="controls">
+            <input type="text" id="slope" name="slope" class="form-control">
+          </div>
+        </div>
+
+
+
+        <div class="form-group mb-4">
+          <label for="thal">Thal : </label>
+          <div class="controls">
+            <input type="text" id="thal" name="thal" class="form-control">
+          </div>
+        </div>
+
+
+
+
+
+
+        <button class="btn btn-success btn-lg" type="submit">Submit</button>
+      </form>
+    </div>
+
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

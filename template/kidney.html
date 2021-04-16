@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+	<title>kidney_pred</title>
+    
+</head>
+	<style>
+     body {
+    background-image: url("static/k5.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+     .form-container {
+    display: flex;
+    margin-top: 90px;
+    padding: 10px;
+  }
+
+  .form-box {
+    background-color: rgba(245, 245, 245, 0.61);
+    box-shadow: 5px 10px 18px #888888;
+    padding: 20px;
+  }
+
+  .header {
+    background-color: #17a2b8;
+    padding: 10px;
+    font-size: xx-large;
+  }</style>
+	
+<body>
+    <header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-info fixed-top">
+    <div class="container">
+      <a class="navbar-brand mr-4" href="/">Disease Prediction App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/about">About</a>
+          <a class="nav-item nav-link" href="/cancer">Breast Cancer</a>
+          <a class="nav-item nav-link" href="/diabetes">Diabetes</a>
+          <a class="nav-item nav-link" href="/heart">Heart</a>
+          <a class="nav-item nav-link" href="/liver">Liver</a>
+          <a class="nav-item nav-link" href="/kidney">Kidney</a>
+           
+
+        </div>
+ 
+      </div>
+    </div>
+  </nav>
+</header>
+<<div class="container" ,class="form-group">
+    <div class="form-box col-md-6">
+
+      <h3 class="header text-center mt-4 mb-4">Enter your medical details :</h3>
+      <form action="/result" method="POST">
+
+    <div class="form-group mb-4">
+          <label for="age">Age : </label>
+          <div class="controls">
+            <input type="text" id="age" name="age"  class="form-control">
+          </div>
+        </div>
+        
+    <div class="form-group mb-4">
+    <label for="bp">B.P : </label>
+          <div class="controls">
+    <input type="text" id="bp" name="bp" class="form-control">
+          </div>
+        </div>
+
+    
+     <div class="form-group mb-4">
+    <label for="al">A.L : </label>
+          <div class="controls">
+    <input type="text" id="al" name="al" class="form-control">
+          </div>
+        </div>
+
+    
+    <div class="form-group mb-4">
+    <label for="pcc">P.C.C : </label>
+          <div class="controls">
+    <input type="text" id="pcc" name="pcc" class="form-control">
+          </div>
+        </div>
+        
+        
+        
+         <div class="form-group mb-4">
+    <label for="bgr">B.G.R: </label>
+          <div class="controls">
+    <input type="text" id="bgr" name="bgr" class="form-control">
+          </div>
+        </div>
+
+
+    
+    <div class="form-group mb-4">
+    <label for="bu">B.U : </label>
+          <div class="controls">
+    <input type="text" id="bu" name="bu" class="form-control">
+          </div>
+        </div>
+
+   
+   
+   
+   
+   
+   <div class="form-group mb-4">
+    <label for="sc">S.C : </label>
+          <div class="controls">
+    <input type="text" id="sc" name="sc" class="form-control">
+          </div>
+        </div>
+        
+        
+        
+        
+        
+        <div class="form-group mb-4">
+    <label for="hemo">HEMO : </label>
+          <div class="controls">
+    <input type="text" id="hemo" name="hemo" class="form-control">
+          </div>
+        </div>
+        
+        
+        
+        
+         <div class="form-group mb-4">
+    <label for="pcv">PCV : </label>
+          <div class="controls">
+    <input type="text" id="pcv" name="pcv" class="form-control">
+          </div>
+        </div>
+        
+        
+        
+        <div class="form-group mb-4">
+    <label for="htn">HTN: </label>
+          <div class="controls">
+    <input type="text" id="htn" name="htn" class="form-control">
+          </div>
+        </div>
+        
+        
+        <div class="form-group mb-4">
+    <label for="dm">D.M : </label>
+          <div class="controls">
+    <input type="text" id="dm" name="dm" class="form-control">
+          </div>
+        </div>
+
+
+
+     <div class="form-group mb-4">
+    <label for="appet">Appet: </label>
+          <div class="controls">
+    <input type="text" id="appet" name="appet" class="form-control">
+          </div>
+        </div>
+    
+
+     <button class="btn btn-success btn-lg" type="submit">Submit</button>
+      </form>
+
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		
+</body>
+</html>
