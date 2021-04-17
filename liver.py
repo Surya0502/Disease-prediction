@@ -7,7 +7,7 @@ from sklearn.model_selection import cross_validate
 from imblearn.over_sampling import SMOTE
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.externals import joblib
+import joblib
 
 data=pd.read_csv("indian_liver_patient.csv")
 data=data.fillna(method="ffill")
@@ -25,7 +25,7 @@ sc=StandardScaler()
 lr=LogisticRegression()
 source=sc.fit_transform(source)
 X_train,X_test,y_train,y_test= train_test_split(source,target,test_size=0.01)
-X_train, y_train=sm.fit_sample(X_train,y_train)
+X_train, y_train=sm.fit_resample(X_train,y_train)
 cv=cross_validate(lr,X_train,y_train,cv=10)
 lr.fit(X_train,y_train)
 print(cv)

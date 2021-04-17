@@ -13,7 +13,7 @@ from sklearn.model_selection import cross_validate
 from imblearn.over_sampling import SMOTE
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.externals import joblib
+import joblib
 
 df=pd.read_csv("kidney_disease.csv")
 
@@ -53,7 +53,7 @@ source=df.drop(["class"],axis=1)
 X_train,X_test,y_train,y_test=train_test_split(source,target,test_size=0.05)
 
 sm=SMOTE()
-X_train, y_train =sm.fit_sample(X_train,y_train)
+X_train, y_train =sm.fit_resample(X_train,y_train)
 lr=LogisticRegression()
 lr.fit(X_train,y_train)
 a11=cross_validate(lr,source,target, cv=10)

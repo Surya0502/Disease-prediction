@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.externals import joblib
+import joblib
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 from sklearn.linear_model import LogisticRegression
